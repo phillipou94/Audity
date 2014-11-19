@@ -9,10 +9,5 @@
 #import <Foundation/Foundation.h>
 
 @interface Song : NSObject
-@property (nonatomic,strong) NSString *url;
-@property (nonatomic,strong) NSString *title;
-@property (nonatomic,strong) NSString *artist;
-@property (nonatomic,strong) NSString *imageUrl;
-@property int index;
 
 @end

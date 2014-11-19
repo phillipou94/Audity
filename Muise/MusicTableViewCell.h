@@ -9,11 +9,6 @@
 #import <UIKit/UIKit.h>
 #import <AVFoundation/AVFoundation.h>
 #import <Parse/Parse.h>
-#import "Song.h"
-
-@protocol MusicCellDelegate
--(void) songAdded: (Song*)song;
-@end
 
 @interface MusicTableViewCell : UITableViewCell
 @property (strong, nonatomic) IBOutlet UILabel *songTitle;
@@ -24,7 +19,5 @@
 @property (strong, nonatomic) IBOutlet UIButton *addButton;
 @property (strong,nonatomic) NSString *imageURL;
 @property (strong, nonatomic) IBOutlet PFImageView *thumbnail;
-@property (retain) id <MusicCellDelegate> delegate;
-@property (strong, nonatomic) Song *song;
 
 @end

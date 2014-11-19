@@ -8,28 +8,15 @@
 
 #import "MusicTableViewCell.h"
 #import <Parse/Parse.h>
-#import <AVFoundation/AVFoundation.h>
-
-
-
 
 @implementation MusicTableViewCell
 
 - (void)awakeFromNib {
     // Initialization code
-    //get a dispatch queue
-    dispatch_queue_t concurrentQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
-    //this will start the image loading in bg
-    dispatch_async(concurrentQueue, ^{
-        NSData *image = [[NSData alloc] initWithContentsOfURL:[NSURL URLWithString:self.imageURL]];
-        
-        //this will set the image when loading is finished
-        dispatch_async(dispatch_get_main_queue(), ^{
-            self.thumbnail.image = [UIImage imageWithData:image];
-        });
-    });
+    NSLog(@"loading image");
+    
+    self.thumbnail.image =  [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:self.imageURL]]];
     self.songTitle.adjustsFontSizeToFitWidth=YES;
-    self.song = [[Song alloc]init];
     [self.thumbnail loadInBackground];
     
 }
@@ -51,7 +38,6 @@
     
     NSURL *songurl = [NSURL URLWithString:self.cellURL];
     NSLog(@"%@",self.cellURL);
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(itemDidFinishPlaying:) name:AVPlayerItemDidPlayToEndTimeNotification object:self.player];
     
     self.player = [AVPlayer playerWithURL:songurl];
     if(!self.playButton.selected){
@@ -63,24 +49,8 @@
         [self.playButton setSelected:NO];
     }
     
-}
 
--(void)itemDidFinishPlaying:(NSNotification *) notification {
-    
-    NSLog(@"done");
-    [self.playButton setSelected:NO];
 }
-
-- (IBAction)addSong:(id)sender {
-    NSLog(@"clicked");
-    self.song.url=self.cellURL;
-    self.song.title=self.songTitle.text;
-    self.song.imageUrl = self.imageURL;
-    self.song.artist=self.artist.text;
-    NSLog(@"%@",self.song);
-    [self.delegate songAdded:self.song];
-}
-
 
 
 @end

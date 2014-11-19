@@ -20,11 +20,9 @@
 @end
 
 @implementation SearchSongTableViewController
-
 - (void)viewDidLoad {
     
     [super viewDidLoad];
-    self.title=@"Search";
     UINib *customNibCell = [UINib nibWithNibName:@"MusicTableViewCell" bundle:[NSBundle mainBundle]];
     [self.tableView registerNib:customNibCell forCellReuseIdentifier:@"CustomCell"];
     self.tableView.separatorStyle=UITableViewCellSeparatorStyleSingleLine;
@@ -37,7 +35,6 @@
      [NSDictionary dictionaryWithObjectsAndKeys:
       [UIFont fontWithName:@"Hero" size:21],
       NSFontAttributeName, nil]];
-    [self.tableView reloadData];
     
     
 }
@@ -102,7 +99,6 @@
     cell.cellURL = [song objectForKey:@"previewUrl"];
     cell.imageURL=[song objectForKey:@"artworkUrl100"];
     [cell.playButton setTag: indexPath.row];
-    cell.delegate = self;
     //[cell.playButton addTarget:self action:@selector(playTapped:) forControlEvents:UIControlEventTouchUpInside];
     
     // Configure the cell...
@@ -129,27 +125,37 @@
     
     for(NSDictionary *dic in [response objectForKey:@"results"]){
         [self.searchResults addObject:dic];
+        NSString *songURL = dic[@"previewUrl"];
+        //NSLog(@"%@",songURL);
+        NSString *songTitle = dic[@"trackName"];
+        NSLog(@"%@",songTitle);
         
     }
     
     [self.tableView reloadData];
-    
 
     // Do the search...
 }
 
-
--(void)songAdded:(Song*) song{
-    NSLog(@"Song:%@",song);
-    PFObject *songToSave = [PFObject objectWithClassName:@"Songs" ];
-    [songToSave setObject:song.title forKey:@"songTitle"];
-    [songToSave setObject:song.artist forKey:@"artistName"];
-    [songToSave setObject:song.url forKey:@"previewUrl"];
-    [songToSave setObject:self.playList.objectId forKey:@"playListID"];
-    [songToSave setObject: song.imageUrl forKey:@"artworkUrl100"];
-    //[songToSave setObject:downloadUrl forKey:@"downloadUrl"];
-    [songToSave saveInBackground];
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+   
+    PFObject *song = [PFObject objectWithClassName:@"Songs" ];
+    NSDictionary *songDic = self.searchResults[indexPath.row];
+    NSString *songTitle= [songDic objectForKey:@"trackName"];
+    NSString *artistName = [songDic objectForKey:@"artistName"];
+    NSString *previewUrl = [songDic objectForKey:@"previewUrl"];
+    NSString *downloadUrl = [songDic objectForKey:@"trackViewUrl"];
+    
+    [song setObject:songTitle forKey:@"songTitle"];
+    [song setObject:artistName forKey:@"artistName"];
+    [song setObject:previewUrl forKey:@"previewUrl"];
+    [song setObject:self.playList.objectId forKey:@"playListID"];
+    [song setObject: songDic[@"artworkUrl100"] forKey:@"artworkUrl100"];
+    [song setObject:downloadUrl forKey:@"downloadUrl"];
+    [song saveInBackground];
+    
     [self performSegueWithIdentifier:@"showPlaylist" sender:self];
+    
 }
 
 -(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
@@ -159,5 +165,49 @@
         [other.tableView reloadData];
     }
 }
+
+/*
+// Override to support conditional editing of the table view.
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+    // Return NO if you do not want the specified item to be editable.
+    return YES;
+}
+*/
+
+/*
+// Override to support editing the table view.
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        // Delete the row from the data source
+        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
+        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+    }   
+}
+*/
+
+/*
+// Override to support rearranging the table view.
+- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
+}
+*/
+
+/*
+// Override to support conditional rearranging of the table view.
+- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
+    // Return NO if you do not want the item to be re-orderable.
+    return YES;
+}
+*/
+
+/*
+#pragma mark - Navigation
+
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
+}
+*/
 
 @end
