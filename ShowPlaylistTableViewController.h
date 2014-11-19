@@ -7,7 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Parse/Parse.h>
+#import "Song.h"
 
-@interface ShowPlaylistTableViewController : UITableViewController
+@interface ShowPlaylistTableViewController : PFQueryTableViewController
+@property (nonatomic, strong) PFObject *playList;
+@property (strong, nonatomic) IBOutlet UITextView *descriptionTextView;
+@property (nonatomic,strong) NSMutableArray *arrayOfSongs;
+@property BOOL fromYouTableView;
+@property (strong, nonatomic) IBOutlet UILabel *titleLabel;
+@property (strong, nonatomic) IBOutlet UILabel *nameLabel;
+@property (strong, nonatomic) Song *selectedSong;
 
 @end

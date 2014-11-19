@@ -7,14 +7,48 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4D3401F819E0C74000783F4B /* hero in Resources */ = {isa = PBXBuildFile; fileRef = 4D3401F719E0C74000783F4B /* hero */; };
+		4D3401FA19E0C81E00783F4B /* Hero Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4D3401F919E0C81E00783F4B /* Hero Light.otf */; };
+		4D3401FC19E0C82300783F4B /* Hero.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4D3401FB19E0C82300783F4B /* Hero.otf */; };
+		4D4C618419E0F8EC000708DA /* playGreen.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D4C618319E0F8EC000708DA /* playGreen.png */; };
+		4D4C618619E0F999000708DA /* pause.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D4C618519E0F999000708DA /* pause.png */; };
+		4D4C618819E0FB24000708DA /* compose-4.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D4C618719E0FB24000708DA /* compose-4.png */; };
+		4D4C618A19E0FBDC000708DA /* user-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D4C618919E0FBDC000708DA /* user-2.png */; };
+		4D4C618C19E0FC90000708DA /* podcast-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D4C618B19E0FC90000708DA /* podcast-2.png */; };
+		4D4C618E19E0FD06000708DA /* podcast.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D4C618D19E0FD06000708DA /* podcast.png */; };
+		4D5ED2E819E0591400C25975 /* YouTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D5ED2E719E0591400C25975 /* YouTableViewController.m */; };
 		4D78576719DE4E9500400AF3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D78576619DE4E9500400AF3 /* main.m */; };
 		4D78576A19DE4E9500400AF3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D78576919DE4E9500400AF3 /* AppDelegate.m */; };
-		4D78576D19DE4E9500400AF3 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D78576C19DE4E9500400AF3 /* FirstViewController.m */; };
-		4D78577019DE4E9500400AF3 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D78576F19DE4E9500400AF3 /* SecondViewController.m */; };
 		4D78577319DE4E9500400AF3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D78577119DE4E9500400AF3 /* Main.storyboard */; };
 		4D78577519DE4E9500400AF3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4D78577419DE4E9500400AF3 /* Images.xcassets */; };
 		4D78577819DE4E9500400AF3 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D78577619DE4E9500400AF3 /* LaunchScreen.xib */; };
 		4D78578419DE4E9500400AF3 /* MuiseTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D78578319DE4E9500400AF3 /* MuiseTests.m */; };
+		4D78578E19DE4ED100400AF3 /* parse-library-1-3 in Resources */ = {isa = PBXBuildFile; fileRef = 4D78578D19DE4ED100400AF3 /* parse-library-1-3 */; };
+		4D78579019DE4EFF00400AF3 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D78578F19DE4EFF00400AF3 /* AudioToolbox.framework */; };
+		4D78579219DE4F0400400AF3 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D78579119DE4F0400400AF3 /* CFNetwork.framework */; };
+		4D78579419DE4F0900400AF3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D78579319DE4F0900400AF3 /* CoreGraphics.framework */; };
+		4D78579619DE4F0F00400AF3 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D78579519DE4F0F00400AF3 /* CoreLocation.framework */; };
+		4D78579819DE4F1500400AF3 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D78579719DE4F1500400AF3 /* libz.dylib */; };
+		4D78579A19DE4F1C00400AF3 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D78579919DE4F1C00400AF3 /* MobileCoreServices.framework */; };
+		4D78579C19DE4F2200400AF3 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D78579B19DE4F2200400AF3 /* QuartzCore.framework */; };
+		4D78579E19DE4F2700400AF3 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D78579D19DE4F2700400AF3 /* Security.framework */; };
+		4D7857A019DE4F2C00400AF3 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D78579F19DE4F2C00400AF3 /* StoreKit.framework */; };
+		4D7857A219DE4F3300400AF3 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D7857A119DE4F3300400AF3 /* SystemConfiguration.framework */; };
+		4D7857A519DE4F9F00400AF3 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D7857A419DE4F9F00400AF3 /* Parse.framework */; };
+		4D7857A719DE4FA300400AF3 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D7857A619DE4FA300400AF3 /* Bolts.framework */; };
+		4D7857A919DE4FA600400AF3 /* ParseFacebookUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D7857A819DE4FA600400AF3 /* ParseFacebookUtils.framework */; };
+		4D85EDF019DFE45D00C51383 /* ShowPlaylistTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D85EDEF19DFE45D00C51383 /* ShowPlaylistTableViewController.m */; };
+		4D973A0019DF314B005E3BF9 /* CreateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D9739FF19DF314B005E3BF9 /* CreateViewController.m */; };
+		4D973A0319DF59EE005E3BF9 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D973A0219DF59EE005E3BF9 /* LoginViewController.m */; };
+		4D973A0919DF61F4005E3BF9 /* GlobalFeed.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D973A0819DF61F4005E3BF9 /* GlobalFeed.m */; };
+		4D973A0C19DF6462005E3BF9 /* SearchSongTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D973A0B19DF6462005E3BF9 /* SearchSongTableViewController.m */; };
+		4D973A0F19DF6B44005E3BF9 /* MusicTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D973A0E19DF6B44005E3BF9 /* MusicTableViewCell.m */; };
+		4D973A1119DF6B57005E3BF9 /* MusicTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D973A1019DF6B57005E3BF9 /* MusicTableViewCell.xib */; };
+		4D97E22419E79B9200119B3B /* Song.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D97E22319E79B9200119B3B /* Song.m */; };
+		4D97E22719E7A32000119B3B /* PlaySongViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D97E22619E7A32000119B3B /* PlaySongViewController.m */; };
+		4DC3872919E0B3F10068EB77 /* InitialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DC3872419E0B3F10068EB77 /* InitialViewController.m */; };
+		4DC3872A19E0B3F10068EB77 /* SignInOrUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DC3872619E0B3F10068EB77 /* SignInOrUpViewController.m */; };
+		4DC3872B19E0B3F10068EB77 /* LoginButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DC3872819E0B3F10068EB77 /* LoginButton.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,21 +62,70 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4D3401F719E0C74000783F4B /* hero */ = {isa = PBXFileReference; lastKnownFileType = folder; path = hero; sourceTree = "<group>"; };
+		4D3401F919E0C81E00783F4B /* Hero Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Hero Light.otf"; path = "hero/Hero Light.otf"; sourceTree = "<group>"; };
+		4D3401FB19E0C82300783F4B /* Hero.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Hero.otf; path = hero/Hero.otf; sourceTree = "<group>"; };
+		4D4C618319E0F8EC000708DA /* playGreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = playGreen.png; sourceTree = "<group>"; };
+		4D4C618519E0F999000708DA /* pause.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pause.png; sourceTree = "<group>"; };
+		4D4C618719E0FB24000708DA /* compose-4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "compose-4.png"; sourceTree = "<group>"; };
+		4D4C618919E0FBDC000708DA /* user-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "user-2.png"; sourceTree = "<group>"; };
+		4D4C618B19E0FC90000708DA /* podcast-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "podcast-2.png"; sourceTree = "<group>"; };
+		4D4C618D19E0FD06000708DA /* podcast.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = podcast.png; sourceTree = "<group>"; };
+		4D5ED2E619E0591400C25975 /* YouTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YouTableViewController.h; sourceTree = "<group>"; };
+		4D5ED2E719E0591400C25975 /* YouTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YouTableViewController.m; sourceTree = "<group>"; };
 		4D78576119DE4E9500400AF3 /* Muise.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Muise.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D78576519DE4E9500400AF3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4D78576619DE4E9500400AF3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		4D78576819DE4E9500400AF3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		4D78576919DE4E9500400AF3 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		4D78576B19DE4E9500400AF3 /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
-		4D78576C19DE4E9500400AF3 /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
-		4D78576E19DE4E9500400AF3 /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
-		4D78576F19DE4E9500400AF3 /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
 		4D78577219DE4E9500400AF3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4D78577419DE4E9500400AF3 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		4D78577719DE4E9500400AF3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		4D78577D19DE4E9500400AF3 /* MuiseTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MuiseTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D78578219DE4E9500400AF3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4D78578319DE4E9500400AF3 /* MuiseTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MuiseTests.m; sourceTree = "<group>"; };
+		4D78578D19DE4ED100400AF3 /* parse-library-1-3 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "parse-library-1-3"; sourceTree = "<group>"; };
+		4D78578F19DE4EFF00400AF3 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		4D78579119DE4F0400400AF3 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		4D78579319DE4F0900400AF3 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		4D78579519DE4F0F00400AF3 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		4D78579719DE4F1500400AF3 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		4D78579919DE4F1C00400AF3 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		4D78579B19DE4F2200400AF3 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		4D78579D19DE4F2700400AF3 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		4D78579F19DE4F2C00400AF3 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		4D7857A119DE4F3300400AF3 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		4D7857A419DE4F9F00400AF3 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = "parse-library-1-3/Parse.framework"; sourceTree = "<group>"; };
+		4D7857A619DE4FA300400AF3 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = "parse-library-1-3/Bolts.framework"; sourceTree = "<group>"; };
+		4D7857A819DE4FA600400AF3 /* ParseFacebookUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ParseFacebookUtils.framework; path = "parse-library-1-3/ParseFacebookUtils.framework"; sourceTree = "<group>"; };
+		4D85EDEE19DFE45D00C51383 /* ShowPlaylistTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ShowPlaylistTableViewController.h; path = ../ShowPlaylistTableViewController.h; sourceTree = "<group>"; };
+		4D85EDEF19DFE45D00C51383 /* ShowPlaylistTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ShowPlaylistTableViewController.m; path = ../ShowPlaylistTableViewController.m; sourceTree = "<group>"; };
+		4D9739FE19DF314B005E3BF9 /* CreateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CreateViewController.h; path = ../CreateViewController.h; sourceTree = "<group>"; };
+		4D9739FF19DF314B005E3BF9 /* CreateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CreateViewController.m; path = ../CreateViewController.m; sourceTree = "<group>"; };
+		4D973A0119DF59EE005E3BF9 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		4D973A0219DF59EE005E3BF9 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		4D973A0719DF61F4005E3BF9 /* GlobalFeed.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlobalFeed.h; sourceTree = "<group>"; };
+		4D973A0819DF61F4005E3BF9 /* GlobalFeed.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GlobalFeed.m; sourceTree = "<group>"; };
+		4D973A0A19DF6462005E3BF9 /* SearchSongTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchSongTableViewController.h; sourceTree = "<group>"; };
+		4D973A0B19DF6462005E3BF9 /* SearchSongTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchSongTableViewController.m; sourceTree = "<group>"; };
+		4D973A0D19DF6B44005E3BF9 /* MusicTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MusicTableViewCell.h; path = Muise/MusicTableViewCell.h; sourceTree = "<group>"; };
+		4D973A0E19DF6B44005E3BF9 /* MusicTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MusicTableViewCell.m; path = Muise/MusicTableViewCell.m; sourceTree = "<group>"; };
+		4D973A1019DF6B57005E3BF9 /* MusicTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MusicTableViewCell.xib; sourceTree = "<group>"; };
+		4D97E22219E79B9200119B3B /* Song.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Song.h; sourceTree = "<group>"; };
+		4D97E22319E79B9200119B3B /* Song.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Song.m; sourceTree = "<group>"; };
+		4D97E22519E7A32000119B3B /* PlaySongViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaySongViewController.h; sourceTree = "<group>"; };
+		4D97E22619E7A32000119B3B /* PlaySongViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaySongViewController.m; sourceTree = "<group>"; };
+		4DC3872319E0B3F10068EB77 /* InitialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InitialViewController.h; sourceTree = "<group>"; };
+		4DC3872419E0B3F10068EB77 /* InitialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InitialViewController.m; sourceTree = "<group>"; };
+		4DC3872519E0B3F10068EB77 /* SignInOrUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignInOrUpViewController.h; sourceTree = "<group>"; };
+		4DC3872619E0B3F10068EB77 /* SignInOrUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignInOrUpViewController.m; sourceTree = "<group>"; };
+		4DC3872719E0B3F10068EB77 /* LoginButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginButton.h; sourceTree = "<group>"; };
+		4DC3872819E0B3F10068EB77 /* LoginButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginButton.m; sourceTree = "<group>"; };
+		4DE29D4919E7347900A0E226 /* libJSONKit.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libJSONKit.a; path = "JSONKit/build/Debug-iphoneos/libJSONKit.a"; sourceTree = "<group>"; };
+		4DE29D4B19E7348800A0E226 /* libOAuth2Client.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libOAuth2Client.a; path = "OAuth2Client/build/Debug-iphoneos/libOAuth2Client.a"; sourceTree = "<group>"; };
+		4DE29D4D19E7349700A0E226 /* libSoundCloudUI.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libSoundCloudUI.a; path = "CocoaSoundCloudUI/build/Debug-iphoneos/libSoundCloudUI.a"; sourceTree = "<group>"; };
+		4DE29D5119E734E900A0E226 /* libOHAttributedLabel.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libOHAttributedLabel.a; path = "OHAttributedLabel/build/Debug-iphoneos/libOHAttributedLabel.a"; sourceTree = "<group>"; };
+		4DE29D5519E7353100A0E226 /* SoundCloudAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SoundCloudAPI.framework; path = CocoaSoundCloudAPI/build/Debug/SoundCloudAPI.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +133,19 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D7857A219DE4F3300400AF3 /* SystemConfiguration.framework in Frameworks */,
+				4D7857A019DE4F2C00400AF3 /* StoreKit.framework in Frameworks */,
+				4D78579E19DE4F2700400AF3 /* Security.framework in Frameworks */,
+				4D78579C19DE4F2200400AF3 /* QuartzCore.framework in Frameworks */,
+				4D78579A19DE4F1C00400AF3 /* MobileCoreServices.framework in Frameworks */,
+				4D78579819DE4F1500400AF3 /* libz.dylib in Frameworks */,
+				4D7857A919DE4FA600400AF3 /* ParseFacebookUtils.framework in Frameworks */,
+				4D7857A719DE4FA300400AF3 /* Bolts.framework in Frameworks */,
+				4D78579619DE4F0F00400AF3 /* CoreLocation.framework in Frameworks */,
+				4D78579419DE4F0900400AF3 /* CoreGraphics.framework in Frameworks */,
+				4D78579219DE4F0400400AF3 /* CFNetwork.framework in Frameworks */,
+				4D7857A519DE4F9F00400AF3 /* Parse.framework in Frameworks */,
+				4D78579019DE4EFF00400AF3 /* AudioToolbox.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,9 +162,19 @@
 		4D78575819DE4E9500400AF3 = {
 			isa = PBXGroup;
 			children = (
+				4D97E22219E79B9200119B3B /* Song.h */,
+				4D97E22319E79B9200119B3B /* Song.m */,
+				4D3401FB19E0C82300783F4B /* Hero.otf */,
+				4D3401F919E0C81E00783F4B /* Hero Light.otf */,
+				4D973A1019DF6B57005E3BF9 /* MusicTableViewCell.xib */,
+				4D973A0D19DF6B44005E3BF9 /* MusicTableViewCell.h */,
+				4D973A0E19DF6B44005E3BF9 /* MusicTableViewCell.m */,
+				4D3401F719E0C74000783F4B /* hero */,
 				4D78576319DE4E9500400AF3 /* Muise */,
 				4D78578019DE4E9500400AF3 /* MuiseTests */,
 				4D78576219DE4E9500400AF3 /* Products */,
+				4D78578D19DE4ED100400AF3 /* parse-library-1-3 */,
+				4D7857A319DE4F5000400AF3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -84,13 +190,35 @@
 		4D78576319DE4E9500400AF3 /* Muise */ = {
 			isa = PBXGroup;
 			children = (
+				4D4C618919E0FBDC000708DA /* user-2.png */,
+				4D4C618719E0FB24000708DA /* compose-4.png */,
+				4D4C618319E0F8EC000708DA /* playGreen.png */,
+				4D4C618519E0F999000708DA /* pause.png */,
+				4D4C618D19E0FD06000708DA /* podcast.png */,
+				4D4C618B19E0FC90000708DA /* podcast-2.png */,
+				4D78577119DE4E9500400AF3 /* Main.storyboard */,
+				4D97E22519E7A32000119B3B /* PlaySongViewController.h */,
+				4D97E22619E7A32000119B3B /* PlaySongViewController.m */,
+				4DC3872319E0B3F10068EB77 /* InitialViewController.h */,
+				4DC3872419E0B3F10068EB77 /* InitialViewController.m */,
+				4DC3872519E0B3F10068EB77 /* SignInOrUpViewController.h */,
+				4DC3872619E0B3F10068EB77 /* SignInOrUpViewController.m */,
+				4DC3872719E0B3F10068EB77 /* LoginButton.h */,
+				4DC3872819E0B3F10068EB77 /* LoginButton.m */,
 				4D78576819DE4E9500400AF3 /* AppDelegate.h */,
 				4D78576919DE4E9500400AF3 /* AppDelegate.m */,
-				4D78576B19DE4E9500400AF3 /* FirstViewController.h */,
-				4D78576C19DE4E9500400AF3 /* FirstViewController.m */,
-				4D78576E19DE4E9500400AF3 /* SecondViewController.h */,
-				4D78576F19DE4E9500400AF3 /* SecondViewController.m */,
-				4D78577119DE4E9500400AF3 /* Main.storyboard */,
+				4D85EDEE19DFE45D00C51383 /* ShowPlaylistTableViewController.h */,
+				4D85EDEF19DFE45D00C51383 /* ShowPlaylistTableViewController.m */,
+				4D9739FE19DF314B005E3BF9 /* CreateViewController.h */,
+				4D9739FF19DF314B005E3BF9 /* CreateViewController.m */,
+				4D973A0719DF61F4005E3BF9 /* GlobalFeed.h */,
+				4D973A0819DF61F4005E3BF9 /* GlobalFeed.m */,
+				4D5ED2E619E0591400C25975 /* YouTableViewController.h */,
+				4D5ED2E719E0591400C25975 /* YouTableViewController.m */,
+				4D973A0A19DF6462005E3BF9 /* SearchSongTableViewController.h */,
+				4D973A0B19DF6462005E3BF9 /* SearchSongTableViewController.m */,
+				4D973A0119DF59EE005E3BF9 /* LoginViewController.h */,
+				4D973A0219DF59EE005E3BF9 /* LoginViewController.m */,
 				4D78577419DE4E9500400AF3 /* Images.xcassets */,
 				4D78577619DE4E9500400AF3 /* LaunchScreen.xib */,
 				4D78576419DE4E9500400AF3 /* Supporting Files */,
@@ -122,6 +250,31 @@
 				4D78578219DE4E9500400AF3 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4D7857A319DE4F5000400AF3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4DE29D5519E7353100A0E226 /* SoundCloudAPI.framework */,
+				4DE29D5119E734E900A0E226 /* libOHAttributedLabel.a */,
+				4DE29D4D19E7349700A0E226 /* libSoundCloudUI.a */,
+				4DE29D4B19E7348800A0E226 /* libOAuth2Client.a */,
+				4DE29D4919E7347900A0E226 /* libJSONKit.a */,
+				4D7857A819DE4FA600400AF3 /* ParseFacebookUtils.framework */,
+				4D7857A619DE4FA300400AF3 /* Bolts.framework */,
+				4D7857A419DE4F9F00400AF3 /* Parse.framework */,
+				4D7857A119DE4F3300400AF3 /* SystemConfiguration.framework */,
+				4D78579F19DE4F2C00400AF3 /* StoreKit.framework */,
+				4D78579D19DE4F2700400AF3 /* Security.framework */,
+				4D78579B19DE4F2200400AF3 /* QuartzCore.framework */,
+				4D78579919DE4F1C00400AF3 /* MobileCoreServices.framework */,
+				4D78579719DE4F1500400AF3 /* libz.dylib */,
+				4D78579519DE4F0F00400AF3 /* CoreLocation.framework */,
+				4D78579319DE4F0900400AF3 /* CoreGraphics.framework */,
+				4D78579119DE4F0400400AF3 /* CFNetwork.framework */,
+				4D78578F19DE4EFF00400AF3 /* AudioToolbox.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -204,9 +357,20 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D3401F819E0C74000783F4B /* hero in Resources */,
+				4D78578E19DE4ED100400AF3 /* parse-library-1-3 in Resources */,
+				4D4C618619E0F999000708DA /* pause.png in Resources */,
 				4D78577319DE4E9500400AF3 /* Main.storyboard in Resources */,
 				4D78577819DE4E9500400AF3 /* LaunchScreen.xib in Resources */,
+				4D4C618C19E0FC90000708DA /* podcast-2.png in Resources */,
+				4D4C618419E0F8EC000708DA /* playGreen.png in Resources */,
 				4D78577519DE4E9500400AF3 /* Images.xcassets in Resources */,
+				4D4C618E19E0FD06000708DA /* podcast.png in Resources */,
+				4D4C618A19E0FBDC000708DA /* user-2.png in Resources */,
+				4D4C618819E0FB24000708DA /* compose-4.png in Resources */,
+				4D3401FC19E0C82300783F4B /* Hero.otf in Resources */,
+				4D3401FA19E0C81E00783F4B /* Hero Light.otf in Resources */,
+				4D973A1119DF6B57005E3BF9 /* MusicTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -224,10 +388,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4D78577019DE4E9500400AF3 /* SecondViewController.m in Sources */,
+				4D97E22419E79B9200119B3B /* Song.m in Sources */,
+				4D973A0919DF61F4005E3BF9 /* GlobalFeed.m in Sources */,
+				4DC3872B19E0B3F10068EB77 /* LoginButton.m in Sources */,
+				4D973A0C19DF6462005E3BF9 /* SearchSongTableViewController.m in Sources */,
+				4D973A0F19DF6B44005E3BF9 /* MusicTableViewCell.m in Sources */,
+				4D973A0319DF59EE005E3BF9 /* LoginViewController.m in Sources */,
+				4D5ED2E819E0591400C25975 /* YouTableViewController.m in Sources */,
 				4D78576A19DE4E9500400AF3 /* AppDelegate.m in Sources */,
-				4D78576D19DE4E9500400AF3 /* FirstViewController.m in Sources */,
+				4D85EDF019DFE45D00C51383 /* ShowPlaylistTableViewController.m in Sources */,
+				4D97E22719E7A32000119B3B /* PlaySongViewController.m in Sources */,
+				4DC3872919E0B3F10068EB77 /* InitialViewController.m in Sources */,
 				4D78576719DE4E9500400AF3 /* main.m in Sources */,
+				4DC3872A19E0B3F10068EB77 /* SignInOrUpViewController.m in Sources */,
+				4D973A0019DF314B005E3BF9 /* CreateViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -351,8 +525,21 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/parse-library-1-3",
+					"$(PROJECT_DIR)/CocoaSoundCloudAPI/build/Debug",
+				);
 				INFOPLIST_FILE = Muise/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/JSONKit/build/Debug-iphoneos",
+					"$(PROJECT_DIR)/OAuth2Client/build/Debug-iphoneos",
+					"$(PROJECT_DIR)/CocoaSoundCloudUI/build/Debug-iphoneos",
+					"$(PROJECT_DIR)/OHAttributedLabel/build/Debug-iphoneos",
+				);
+				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -361,8 +548,21 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/parse-library-1-3",
+					"$(PROJECT_DIR)/CocoaSoundCloudAPI/build/Debug",
+				);
 				INFOPLIST_FILE = Muise/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/JSONKit/build/Debug-iphoneos",
+					"$(PROJECT_DIR)/OAuth2Client/build/Debug-iphoneos",
+					"$(PROJECT_DIR)/CocoaSoundCloudUI/build/Debug-iphoneos",
+					"$(PROJECT_DIR)/OHAttributedLabel/build/Debug-iphoneos",
+				);
+				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -420,6 +620,7 @@
 				4D78578919DE4E9500400AF3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4D78578A19DE4E9500400AF3 /* Build configuration list for PBXNativeTarget "MuiseTests" */ = {
 			isa = XCConfigurationList;
@@ -428,6 +629,7 @@
 				4D78578C19DE4E9500400AF3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -92,7 +92,6 @@
         self.lblTitle.alpha = 1.0f;
         self.btnSignIn.alpha = 1.0f;
         self.btnCreateAccount.alpha = 1.0f;
-        
         self.lblTitle.frame = originalTitleFrame;
         self.btnSignIn.frame = originalSignInFrame;
         self.btnCreateAccount.frame = originalCreateAccountFrame;

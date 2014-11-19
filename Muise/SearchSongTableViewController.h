@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import <Parse/Parse.h>
+#import "MusicTableViewCell.h"
 
-@interface SearchSongTableViewController : UITableViewController<UISearchBarDelegate>
+@interface SearchSongTableViewController : UITableViewController<UISearchBarDelegate,MusicCellDelegate>
 @property PFObject *playList;
 @end

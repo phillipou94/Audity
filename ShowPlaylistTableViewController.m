@@ -7,94 +7,169 @@
 //
 
 #import "ShowPlaylistTableViewController.h"
+#import "MusicTableViewCell.h"
+#import <AVFoundation/AVFoundation.h>
+#import "SearchSongTableViewController.h"
+#import "PlaySongViewController.h"
 
 @interface ShowPlaylistTableViewController ()
+@property (strong,nonatomic) AVPlayer *player;
+@property (strong, nonatomic) IBOutlet UIView *view;
+
 
 @end
 
 @implementation ShowPlaylistTableViewController
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
+- (void)viewWillAppear:(BOOL)animated {
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
+    [super viewWillAppear:animated];
+    self.selectedSong = [[Song alloc]init];
+    self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"   " style:UIBarButtonItemStylePlain target:nil action:nil];
     
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    self.parseClassName=@"Songs";
+    UINib *customNibCell = [UINib nibWithNibName:@"MusicTableViewCell" bundle:[NSBundle mainBundle]];
+    [self.tableView registerNib:customNibCell forCellReuseIdentifier:@"CustomCell"];
+    self.tableView.separatorStyle=UITableViewCellSeparatorStyleSingleLine;
+    self.descriptionTextView.text = self.playList[@"description"];
+    self.titleLabel.text = self.playList[@"title"];
+    self.nameLabel.text = self.playList[@"createdByName"];
+    self.view.backgroundColor = [UIColor colorWithRed:51/255.0 green:51/255.0 blue:51/255.0 alpha:1];
+    self.navigationController.navigationBar.translucent=NO;
+    self.navigationController.navigationBar.barTintColor= [UIColor colorWithRed:69/255.0 green:173/255.0 blue:162/255.0 alpha:1];
+    [self.navigationController.navigationBar setTitleTextAttributes:
+     [NSDictionary dictionaryWithObjectsAndKeys:
+      [UIFont fontWithName:@"Hero" size:21],
+      NSFontAttributeName, nil]];
+    self.tabBarController.tabBar.hidden=YES;
+    
+    [self.tableView reloadData];
+
+}
+-(PFQuery *) queryForTable{
+    
+    PFQuery *query = [PFQuery queryWithClassName:@"Songs"];
+    [query whereKey:@"playListID" equalTo:self.playList.objectId];
+    return query;
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (IBAction)back:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
+
 
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Potentially incomplete method implementation.
+
     // Return the number of sections.
-    return 0;
+    return 1;
+}
+
+-(CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return 90;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete method implementation.
-    // Return the number of rows in the section.
-    return 0;
+
+    return [self.objects count];
 }
 
-/*
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
-    
-    // Configure the cell...
+   
+    MusicTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CustomCell" forIndexPath:indexPath];
+    PFObject *song = self.objects[indexPath.row];
+    cell.songTitle.text = [song objectForKey:@"songTitle"];
+    cell.songTitle.font=[UIFont fontWithName:@"Hero" size:20];
+    cell.artist.text = [song objectForKey:@"artistName"];
+    cell.artist.font=[UIFont fontWithName:@"Hero-Light" size:15];
+    cell.cellURL = [song objectForKey:@"previewUrl"];
+    cell.imageURL=[song objectForKey:@"artworkUrl100"];
+    if(self.fromYouTableView){
+        cell.addButton.hidden=YES;
+    }
     
     return cell;
+    
 }
-*/
 
-/*
-// Override to support conditional editing of the table view.
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    PFObject *song = self.objects[indexPath.row];
+    self.selectedSong.index = (int) indexPath.row;
+    NSLog(@"selectedSong: %@",song);
+    self.selectedSong.title =[song objectForKey:@"songTitle"];
+    self.selectedSong.artist =[song objectForKey:@"artistName"];
+    self.selectedSong.url= [song objectForKey:@"previewUrl"];
+    self.selectedSong.imageUrl =[song objectForKey:@"artworkUrl100"];
+    [self performSegueWithIdentifier:@"playSong" sender:self];
+    
+}
+
+
+- (IBAction)addSongs:(id)sender {
+    [self performSegueWithIdentifier:@"takeToSearch" sender:self];
+}
+
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
     return YES;
 }
-*/
 
-/*
-// Override to support editing the table view.
+
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if([segue.identifier isEqualToString:@"takeToSearch"]) {
+        
+        SearchSongTableViewController *other = [segue destinationViewController];
+        other.playList= self.playList;
+        
+    }
+    else if([segue.identifier isEqualToString:@"playSong"]){
+        PlaySongViewController *other = [segue destinationViewController];
+        other.song = self.selectedSong;
+        other.playList = [self.objects mutableCopy];
+        
+    }
+    
+             
+}
+
+    
+
+
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
+        //NSLog(@"deleting");
+        PFObject *objectToDelete = self.objects[indexPath.row];
+        
+        NSString *downloadUrl=objectToDelete[@"downloadUrl"];
+        
+        //[objectToDelete deleteInBackground];
+        //[self loadObjects];
+        
+        //add code here for when you hit delete
+        
+    }
 }
-*/
 
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
+-(NSArray *)tableView:(UITableView *)tableView editActionsForRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewRowAction *button = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleDefault title:@"Download" handler:^(UITableViewRowAction *action, NSIndexPath *indexPath)
+                                    {
+                                        
+                                        PFObject *object = self.objects[indexPath.row];
+                                        NSString *downloadUrl=object[@"downloadUrl"];
+                                        NSLog(@"download%@",downloadUrl);
+                                        NSURL *url = [NSURL URLWithString:downloadUrl];
+                                        
+                                        if (![[UIApplication sharedApplication] openURL:url]) {
+                                            NSLog(@"%@%@",@"Failed to open url:",[url description]);
+                                        }
+
+                                        
+                                        
+                                    }];
+    button.backgroundColor = [UIColor colorWithRed:69/255.0 green:173/255.0 blue:162/255.0 alpha:1]; //arbitrary color
+    
+    return @[button];
 }
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
 @end

@@ -20,7 +20,8 @@
 
 
 - (void)viewWillAppear:(BOOL)animated {
-    [super viewDidLoad];
+    [super viewWillAppear:animated];
+    self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"   " style:UIBarButtonItemStylePlain target:nil action:nil];
     self.parseClassName = @"Playlist";
     self.view.backgroundColor = [UIColor colorWithRed:51/255.0 green:51/255.0 blue:51/255.0 alpha:1];
     //[self.view setTintColor:[UIColor colorWithRed:69/255.0 green:173/255.0 blue:162/255.0 alpha:1]];
@@ -31,6 +32,7 @@
       [UIFont fontWithName:@"Hero" size:21],
       NSFontAttributeName, nil]];
     [self.tabBarController.tabBar setTintColor:[UIColor colorWithRed:69/255.0 green:173/255.0 blue:162/255.0 alpha:1]];
+    self.tabBarController.tabBar.hidden=NO;
     
     UIWindow* mWindow = [[UIApplication sharedApplication] keyWindow]; mWindow.tintColor = [UIColor blackColor];
     [self.tableView reloadData];
