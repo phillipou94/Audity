@@ -7,6 +7,8 @@
 //
 
 #import "AppDelegate.h"
+#import <Parse/Parse.h>
+#import "LoginViewController.h"
 
 @interface AppDelegate ()
 
@@ -15,10 +17,33 @@
 @implementation AppDelegate
 
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+{
     // Override point for customization after application launch.
+    [Parse setApplicationId:@"Lbz6dBlQtPiLeuHbGUi0uRE7HbU7iPYUNBVguoMY"
+                  clientKey:@"tJRlQrMQWSud9tajyvPQvUmzoBx5m9YzbkvRizZ5"];
+    [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
+    
+    [PFImageView class];
+    [self.window makeKeyAndVisible];
+    if(![PFUser currentUser]){
+        [self presentLoginControllerAnimated:NO];}
+    
+    
+    
+    
+    
+    
+    //if user is not logged in
     return YES;
 }
+-(void) presentLoginControllerAnimated:(BOOL) animated{
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    UINavigationController *loginNavigationController = [storyboard instantiateViewControllerWithIdentifier:@"loginNav"];
+    [self.window.rootViewController presentViewController:loginNavigationController animated:animated completion:nil];
+    
+}
+
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
